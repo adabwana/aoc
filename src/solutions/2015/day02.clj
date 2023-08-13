@@ -17,10 +17,10 @@
 ;; ## Solution
 
 (defn read-input  [file-name]
-  (vec (map string/trim-newline (string/split (slurp file-name) #"\n"))))
+  (vec (map str/trim-newline (str/split (slurp file-name) #"\n"))))
 
 (defn wrap-per-box [dim-str]
-  (let [str-nums (vec (map #(Integer/parseInt %) (string/split dim-str #"x")))
+  (let [str-nums (vec (map #(Integer/parseInt %) (str/split dim-str #"x")))
         l (first str-nums)
         w (second str-nums)
         h (last str-nums)
