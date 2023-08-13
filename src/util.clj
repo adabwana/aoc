@@ -1,10 +1,10 @@
 (ns util
   (:require
-   [clj-http.client :as client]
-   [hickory.core :as h]
-   [hickory.render :as hr]
-   [hickory.select :as s]
-   [babashka.fs :as fs]))
+    [clj-http.client :as client]
+    [hickory.core :as h]
+    [hickory.render :as hr]
+    [hickory.select :as s]
+    [babashka.fs :as fs]))
 
 (defn load-problem [day year]
   (let [day (str (parse-long day))

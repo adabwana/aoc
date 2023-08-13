@@ -1,5 +1,5 @@
 ^{:nextjournal.clerk/visibility :hide-ns}
-(ns solutions.YEAR.dayDAY
+(ns solutions.template
   (:require [clojure.java.io :as io]
             [util :as u]
             [nextjournal.clerk :as clerk]
@@ -16,7 +16,7 @@
 ;; ## Solution
 ;;
 ;; First things first, let's load our input and parse it
-(def input (->> (slurp (io/resource "inputs/YEAR/dayDAY.txt")) ;; Load the resource
+(def input (->> (slurp (io/resource "inputs/YEAR/DAY.txt")) ;; Load the resource
                 str/split-lines))                              ;; Split into lines
 
 {:nextjournal.clerk/visibility {:result :hide}}
