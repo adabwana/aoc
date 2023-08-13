@@ -29,6 +29,6 @@
         small-two-mult (reduce * (take 2 sort-str-nums))]
     (+ surface-area small-two-mult)))
 
-(def input (read-input "./data/day-2.txt"))
+;(def input (read-input "./data/day-2.txt"))
 
-(wrap-per-box input)
+;(wrap-per-box input)

@@ -23,6 +23,6 @@
       (println (last floors)) ;; part 1
       (println first-basement))) ;; part 2
 
-(def input (read-input "./data/day-1.txt"))
+;(def input (read-input "./data/day-1.txt"))
 
-(what-floor input)
+;(what-floor input)
