@@ -2,7 +2,6 @@
 (ns solutions.2015.day01
     (:require
         [clojure.java.io :as io]
-        [clojure.string :as str]
         [nextjournal.clerk :as clerk]
         [util :as u]))
 
@@ -14,15 +13,31 @@
 {:nextjournal.clerk/visibility {:code :show :result :show}}
 
 ;; # Solution
-(defn read-input  [file-name]
-  (slurp file-name))
+
+(def input (->> (slurp (io/resource "inputs/2015/day01.txt")))) ;; Load the resource
+
+
+{:nextjournal.clerk/visibility {:result :hide}}
+(defn part-1 [input]
+  (let [floors (reductions + (map #(if (= % \() 1 -1) input))]
+    (println (last floors)))) ;; part 1
+
+;; Which gives our answer
+{:nextjournal.clerk/visibility {:code :hide :result :show}}
+(part-1 input)
+
+{:nextjournal.clerk/visibility {:code :show :result :hide}}
+(defn part-2 [input]
+  (let [floors (reductions + (map #(if (= % \() 1 -1) input))
+        first-basement (inc (.indexOf floors -1))]
+    (println first-basement))) ;; part 2
+
+;; Which gives our answer
+{:nextjournal.clerk/visibility {:code :hide :result :show}}
+(part-2 input)
 
 (defn what-floor [paren-str]
   (let [floors (reductions + (map #(if (= % \() 1 -1) paren-str))
         first-basement (inc (.indexOf floors -1))]
       (println (last floors)) ;; part 1
       (println first-basement))) ;; part 2
-
-;(def input (read-input "./data/day-1.txt"))
-
-;(what-floor input)
